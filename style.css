@@ -1,57 +1,57 @@
 @font-face {
-  font-family: Poppins;
-  src: url('./assets/fonts/Poppins-Regular.ttf');
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Poppins;
-  src: url('./assets/fonts/Poppins-Italic.ttf');
-  font-style: italic, oblique;
-}
-
-@font-face {
-  font-family: Poppins;
-  src: url('./assets/fonts/Poppins-Bold.ttf');
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: Poppins;
-  src: url('./assets/fonts/Poppins-BoldItalic.ttf');
-  font-weight: bold;
-  font-style: italic, oblique;
-}
-
-@font-face {
-  font-family: Poppins;
-  src: url('./assets/fonts/Poppins-ExtraBold.ttf');
-  font-weight: bolder;
-}
-
-@font-face {
-  font-family: Poppins;
-  src: url('./assets/fonts/Poppins-ExtraBoldItalic.ttf');
-  font-weight: bolder;
-  font-style: italic, oblique;
-}
-
-:root {
-  width: 100vw;
-
-  --body-font-size: 32px;
-
-  /*primary color*/
-  --purple: hsl(259, 100%, 65%);
-  --light-red:  hsl(0, 100%, 67%);
-
-  /*neutral color*/
-  --white: hsl(0, 0%, 100%);
-  --white-off: hsl(0, 0%, 94%);
-  --light-grey: hsl(0, 0%, 86%);
-  --smokey-grey:  hsl(0, 1%, 44%);
-  --off-black: hsl(0, 0%, 8%);
-}
+    font-family: Poppins;
+    src: url('./assets/fonts/Poppins-Regular.ttf');
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: Poppins;
+    src: url('./assets/fonts/Poppins-Italic.ttf');
+    font-style: italic, oblique;
+  }
+  
+  @font-face {
+    font-family: Poppins;
+    src: url('./assets/fonts/Poppins-Bold.ttf');
+    font-weight: bold;
+  }
+  
+  @font-face {
+    font-family: Poppins;
+    src: url('./assets/fonts/Poppins-BoldItalic.ttf');
+    font-weight: bold;
+    font-style: italic, oblique;
+  }
+  
+  @font-face {
+    font-family: Poppins;
+    src: url('./assets/fonts/Poppins-ExtraBold.ttf');
+    font-weight: bolder;
+  }
+  
+  @font-face {
+    font-family: Poppins;
+    src: url('./assets/fonts/Poppins-ExtraBoldItalic.ttf');
+    font-weight: bolder;
+    font-style: italic, oblique;
+  }
+  
+  :root {
+    width: 100vw;
+  
+    --body-font-size: 32px;
+  
+    /*primary color*/
+    --purple: hsl(259, 100%, 65%);
+    --light-red:  hsl(0, 100%, 67%);
+  
+    /*neutral color*/
+    --white: hsl(0, 0%, 100%);
+    --white-off: hsl(0, 0%, 94%);
+    --light-grey: hsl(0, 0%, 86%);
+    --smokey-grey:  hsl(0, 1%, 44%);
+    --off-black: hsl(0, 0%, 8%);
+  }
 
 * {
   box-sizing: border-box;
@@ -72,13 +72,6 @@ body {
   font-family: Poppins, sans-serif;
 }
 
-main {
-  width: 500px;
-  background-color: var(--white);
-  padding: 2rem;
-  border-radius: 1rem 1rem 6rem 1rem;
-}
-
 input {
   width: 100%;
   border: solid 1px var(--light-grey);
@@ -94,15 +87,15 @@ label {
   text-transform: uppercase;
 }
 
-.field-section {
-  width: 80%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 15px;
+main {
+  max-width: 90vw;
+  padding: 1rem;
+  background-color: var(--white);
+  border-radius: 1rem 1rem 6rem 1rem;
 }
 
 .displayer div {
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .displayer div span {
@@ -114,9 +107,20 @@ label {
   position: relative;
 }
 
+.field-section {
+  width: 100%;
+  column-gap: 5px;
+}
+
+.divider {
+  display: flex;
+  margin: 1rem 0px;
+  justify-content: center;
+}
+
 .divider::before {
   content: "";
-  width: calc(100% - 60px);
+  width: 100%;
   background-color: var(--light-grey);
   height: 1px;
   margin-top: 30px;
@@ -144,59 +148,50 @@ label {
   cursor: pointer;
 }
 
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
+ /* Chrome, Safari, Edge, Opera */
+ input::-webkit-outer-spin-button,
+ input::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+ }
+ 
+ /* Firefox */
+ input[type=number] {
+   -moz-appearance: textfield;
+ }
 
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
+ input.error {
+    border-color: var(--light-red);
+  }
 
-.attribution {
-  position: relative;
-  top: 2rem;
-}
+  label.error, span.error {
+    color: var(--light-red);
+  }
 
-input.error {
-  border-color: var(--light-red);
-}
+  span.error {
+    font-size: 9px;
+  }
 
-label.error, span.error {
-  color: var(--light-red);
-}
+  .attribution {
+    position: relative;
+    top: 2rem;
+  }
 
-span.error {
-  font-size: 9px;
-}
-
-@media screen and (max-width: 375px) {
+@media screen and(min-width: 1440px) {
+  
   main {
-    max-width: 90vw;
-    padding: 1rem;
+    width: 500px;
+    padding: 2rem;
   }
-
+  
   .field-section {
-    width: 100%;
-    column-gap: 5px;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 15px;
   }
-
-  .divider {
-    display: flex;
-    margin: 1rem 0px;
-    justify-content: center;
-  }
-
+  
   .divider::before {
-    content: "";
-    width: 100%;
-    background-color: var(--light-grey);
-    height: 1px;
-    margin-top: 30px;
-    position: absolute;
-    z-index: 1;
+    width: calc(100% - 60px);
   }
 }
